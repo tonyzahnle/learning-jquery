@@ -3,15 +3,49 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script type="text/javascript">
 		window.onload = function() {
-			console.log('Window loaded');
+			console.log('Window loaded' + new Date());
 		};
 		
 		$(document).ready(function() {
-			console.log('DOM loaded');
+			console.log('DOM loaded' + new Date());
+			var trs = $('table tr');
+			console.log('tr length: ' + trs.length);
+			trs.css('background-color', 'Green');
+			$('tr.red').css('background-color', 'Red');
 		});
 		</script>
 	</head>
 	<body>
-		My jQuery enabled Page!
+		<div id=myContent>
+			My jQuery enabled Page!
+		</div>
+		
+		<table>
+		<tr>
+			<th>
+			Table Header
+			</th>
+		</tr>
+		<tr class="Red">
+			<td>
+			Row 1
+			</td>
+		</tr>	
+		<tr>	
+			<td>
+			Row 2
+			</td>
+		</tr>	
+		<tr>	
+			<td>
+			Row 3
+			</td>
+		</tr>	
+		<tr>	
+			<td>
+			Row 4
+			</td>
+		</tr>
+		</table>
 	</body>
 </html>

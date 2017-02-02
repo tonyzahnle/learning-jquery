@@ -48,3 +48,42 @@ Why NOT use CDN?
 		//Perform action here - DOM hierarchy is loaded, but not all images are loaded
 	});
 </script>
+
+Alternative to using the jQuery ready function is to put the script tag at the bottom of the body, because then you know everything else in the DOM is loaded at that point.  If you want it in the <Head> tag, use $(document).ready().
+
+$('#idSelector') returns objects with the specified 'Id'.
+The jQuery objects that are returned have helper functions/methods on them to manipulate the DOM, such as ().html('Hello World'), to manipulate the HTML to include that string.
+
+
+# [API Documentation](http://api.jquery.com/)
+
+# jQuery Selectors
+## What are selectors?
+Selectors are strings that identify an HTML element/tag that you wish to manipulate with jQuery code.
+
+###Selecting nodes by Tag Names
+$('a') selects all <a> elements
+$('p') selects all <p> elements
+$('p,a,span') selects all paragraph, anchor, and span tags
+$('table tr') selects all tr elements that are (any) decendants of the table element.
+
+###Selecting nodes by ID
+HTML: 	<div id="testDiv">This is a test div</div>
+jQuery:	$('#testDiv')
+
+###Selecting by class name
+HTML: <p class="MyClass">
+jQuery: $('.MyClass')
+
+HTML: <div class="blueDiv"></div> <div class="redDiv"></div>
+jQuery: $('.blueDiv, .redDiv')
+
+Can combine this with Tag Names (elements) as well
+HTML: <div class="myClass"></div>
+jQuery: $('div.myClass')
+This allows us to not have to scan the whole DOM, only the elements we want/need.
+
+Be wary of performance when using selectors.  Try to be as specific as you can be so you don't have to scan the whole DOM.
+
+###Selecting by Attribute
+Use brackets [attribute] to select based on attribute name and/or value.
