@@ -87,3 +87,71 @@ Be wary of performance when using selectors.  Try to be as specific as you can b
 
 ###Selecting by Attribute
 Use brackets [attribute] to select based on attribute name and/or value.
+HTML: <a title="Some Title"></a>
+jQuery: $('a[title]')
+This allows us to select all <a> elements that have a title attribute.  You can also define exactly what attribute value you're looking for.  When you see brackets "[]" think "where".  (example: an anchor tag 'where' title {contains a value})
+
+###Selecting Input Nodes
+jQuery: $(':input')
+Grabs all input element types
+
+###Advanced selectors
+####Using contains in selectors
+:contains() will select elements that match the contents within the contains description
+jQuery: $('div:contains("pluralsight")')
+HTML: <div>Practicing via pluralsight courses</div>
+*Note* - It is Case-sensitive
+
+####Selecting even/odd rows in a table
+jQuery: $('tr:odd') and $('tr:even')  [0 is even]
+
+####Selecting nth children
+jQuery: $('span:first-child')
+HTML:
+<div>
+	<span>First Child, first group</span> - This is selected
+	<span>Second Child, first group</span>
+</div>
+<div>
+	<span>First Child, second group</span> - This is selected
+	<span>Second Child, second group</span>
+</div>
+
+####Select (attribute selector)
+jQuery: $('input[value^="Events"]') - Starts With "Events"
+jQuery: $('input[valueS="Events"]') - Ends With "Events"
+jQuery: $('input[value*="Events"]') - Contains "Events"
+
+
+# Interacting with the DOM
+## Iterating through nodes
+jQuery .each(function(index, element) {}); is used to iterate through jQuery objects
+Can be used as .each(function(index) {}); as well
+Wrap the element in jQuery to get access to the functions. $(elem)
+
+###Modifying object properties
+element is the raw DOM object and have direct access to the properties
+If the property does not exist, it will be added.
+
+###Modifying attributes
+jQuery wrapped object can change the object attributes
+$(element).attr(attributeName) - Gets value of attribute
+$(element).attr(attributeName, value) - Sets value of attribute
+
+Works for a group of objects with no need to do a loop through them.
+Can use JSON to modify multiple attributes.
+$(element).attr({
+	title: 'New Title',
+	style: 'border:2px solid black;'
+});
+
+####JSON
+An anonymous object described as name/value pairs
+{
+	FirstName: 'First Name Value',
+	Address: {
+		Street: '1234 Fake St.'
+		City: 'Realtown'
+	}
+}
+

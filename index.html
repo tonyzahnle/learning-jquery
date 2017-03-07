@@ -12,6 +12,14 @@
 			console.log('tr length: ' + trs.length);
 			trs.css('background-color', 'Green');
 			$('tr.red').css('background-color', 'Red');
+			
+			$(':input').each(function() {
+				var obj = $(this);
+				console.log($(obj).val());
+			});
+			
+			$('tr:even').css('background-color', 'Blue');
+			$('tr:contains("3")').css('background-color', 'White');
 		});
 		</script>
 	</head>
@@ -44,6 +52,115 @@
 		<tr>	
 			<td>
 			Row 4
+			</td>
+		</tr>
+		</table>
+		
+		<form id="form1" runat="server">
+			<table style="width:300px;">
+				<tr>
+					<td>First Name</td>
+					<td><input id="FirstNameTextBox" value="John" type="text" /></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input id="LastNameTextBox" type="text" /></td>
+				</tr>
+				<tr>
+					<td>Comments</td>
+					<td><textarea rows="5" cols="60" id="CommentsTextBox">TextArea</textarea></td>
+				</tr>
+				<tr>
+					<td><input id="SubmitButton" type="button" value="Submit" /></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+		
+		<table id="game_table">
+		<tr>
+			<th>
+			Table Header
+			</th>
+			<th>
+			Table Header
+			</th>
+			<th>
+			Table Header
+			</th>
+			<th>
+			Table Header
+			</th>
+			<th>
+			Table Header
+			</th>
+		</tr>
+		<tr class="Red">
+			<td>
+			Row 1
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+		</tr>	
+		<tr>	
+			<td>
+			Row 2
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+		</tr>	
+		<tr>	
+			<td>
+			Row 3
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+		</tr>	
+		<tr>	
+			<td>
+			Row 4
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
+			</td>
+			<td>
+			 -
 			</td>
 		</tr>
 		</table>
