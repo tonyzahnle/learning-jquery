@@ -155,3 +155,45 @@ An anonymous object described as name/value pairs
 	}
 }
 
+####Chaining
+$(element).attr({}).css()
+attr returns the modified set of objects, then applies the changes from the css function.
+
+###Adding and Removing nodes
+######Add
+.append()
+.appendTo()
+.prepend()
+.prependTo()
+######Remove
+.remove()
+
+####Appending
+Adds children to the end of the matching element.
+$('<span>(office)</span>').appendTo('.officePhone')
+or
+$('.officePhone').append('<span>(office)</span>')
+
+Both result in (office) being added into each .officePhone class element
+
+####Prepending
+Adds children to the beginning of the matching element
+$('<span>Phone: </span>').prependTo('.officePhone')
+or
+$('.officePhone').prepend('<span>Phone: </span>')
+
+Both result in Phone: being added into each .officePhone class element
+
+####Wrapping elements
+HTML: <div class="state">Arizona</div>
+jQuery: $('.state').wrap('<div class="US_State"/>');
+Results in:
+<div class="US_State">
+	<div class="state">Arizona</div>
+</div>
+
+####Removing
+$(element).remove(); will remove all matched elements from the DOM (and it's children)
+
+###See More
+[jQuery Manipulation](https://api.jquery.com/category/manipulation/ )
